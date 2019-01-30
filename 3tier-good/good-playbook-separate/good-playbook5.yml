@@ -1,0 +1,20 @@
+- name: deploy apache
+  hosts: apps
+  gather_facts: false
+  become: true
+
+  tasks:
+  - name: install apache
+    yum:
+      name: httpd
+      state: latest
+  - name: enable apache at boot & start
+    service:
+      name: httpd
+      enabled: yes
+      state: started
+  handlers:
+    - name: restart apache
+      service:
+        name: httpd
+        state: restarted

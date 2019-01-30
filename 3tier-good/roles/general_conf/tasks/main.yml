@@ -1,0 +1,7 @@
+---
+
+- name: enable repos
+  template:
+    src: "{{repo_src}}"
+    dest: "{{repo_target}}"
+    mode: "{{repo_mode}}"

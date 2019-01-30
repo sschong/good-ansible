@@ -1,0 +1,44 @@
+---
+- hosts: all
+  gather_facts: false # remove later! speeds up testing
+  become: true
+
+  roles:
+  - general_conf
+
+- hosts: frontends
+  gather_facts: false # remove later! speeds up testing
+  become: true
+
+  roles:
+  - deploy_haproxy
+
+- hosts: apps
+  gather_facts: false
+  become: true
+
+  roles:
+  - deploy_tomcat
+
+- name: deploy index.html on app
+  hosts: apps
+  gather_facts: false
+  become: true
+
+  roles:
+  - deploy_app_files
+
+
+- hosts: appdbs
+  gather_facts: false
+  become: true
+
+  roles:
+  - deploy_postgresql
+
+- hosts: apps
+  gather_facts: false
+  become: true
+
+  roles:
+  - deploy_apache

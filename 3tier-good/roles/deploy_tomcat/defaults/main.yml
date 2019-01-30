@@ -1,0 +1,3 @@
+---
+# defaults file for roles/deploy_tomcat
+tomcat_root_dir: '/usr/share/tomcat/webapps/ROOT'

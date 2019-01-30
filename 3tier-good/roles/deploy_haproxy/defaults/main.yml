@@ -1,0 +1,4 @@
+---
+# defaults file for roles/deploy_haproxy
+haproxy_config_src: ./haproxy.cfg.j2 
+haproxy_config_dest: /etc/haproxy/haproxy.cfg 

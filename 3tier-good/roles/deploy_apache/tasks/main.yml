@@ -1,0 +1,11 @@
+---
+# tasks file for roles/deploy_apache
+- name: install apache
+  yum:
+    name: httpd
+    state: latest
+- name: enable apache at boot & start
+  service:
+    name: httpd
+    enabled: yes
+    state: started

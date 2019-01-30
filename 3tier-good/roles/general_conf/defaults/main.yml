@@ -1,0 +1,5 @@
+---
+# defaults file for roles/general_conf
+repo_src: ./open_three-tier-app.repo
+repo_target: /etc/yum.repos.d/open_three-tier-app.repo
+repo_mode: 0644 

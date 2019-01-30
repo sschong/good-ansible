@@ -1,0 +1,7 @@
+---
+# handlers file for roles/deploy_postgrsql
+- name: restart postgresql
+  service:
+    name: postgresql
+    state: restarted
+  become: true
